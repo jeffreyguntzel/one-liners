@@ -1,0 +1,8 @@
+# Calculate the average file size in a folder in kilobytes
+`find . -type f -exec ls -l {} \; | awk '{ total += $5; count++ } END { print total/count/1024 }'`
+
+Folder size options:
+
+- bytes (default): `{ print total/count/ }` 
+- megabytes: `{ print total/count/1048576 }` 
+- gigabytes: `{ print total/count/1073741824 }` 
